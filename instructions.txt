@@ -35,6 +35,11 @@ q --> za izlazak, nešto kao "ctrl+c"
 
 
 
+AKO NE ŽELI MERGAT ILI PULLAT DODAŠ SAMO OVAJ FLAG U NASTAVKU "--allow-unrelated-histories"
+    nprr git pull origin master --allow-unrelated-histories
+
+
+
 ///////////////////////BRANČING --- kao sandbox za featurse, da ne sjebeš main code koji je provjeren i radi
 git branch --> vidiš sve brančove (onaj sa zvjezdicom je onaj u kome si sad)
 git checkout -b "ime novog brancha, bez navodnika" 
