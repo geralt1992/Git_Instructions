@@ -11,7 +11,9 @@ kreirati ssh keys (oni povezuju tvoj github acc i repoe s PC-em)
                3) povezati ssh agentom kroz terminal -- KROZ GIT BASH!
     upute --> https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 
-
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+--> to set your account's default identity.
 
 /////////////////////// OSNOVE
 IME MAINA BRACHA MJENJAŠ U SETIGNS (na GitHubu) --> Repositories 
