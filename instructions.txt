@@ -28,8 +28,20 @@ git commit -m "lorem20" -m "description"
 git push origin master
 
 git clone (i onda hss ili http od repoa na githubu) --> za kopirati repo s githuba
-git remote (za spojiti localni gitInit s praznim github repom na svom GITHUBU)
-   NPR git remote add origin git@github.com:geralt1992/Git_Instructions.git
+
+
+
+
+///////////////////////ZA SPAJANJE S VANJSKIM REPOM (slijedi točno po koracima)
+git init 
+git remote add origin "SSH"
+git pull origin master 
+    git add .
+    git commit -m "message"
+    git push origin master
+    
+AKO NE ŽELI MERGAT ILI PULLAT DODAŠ SAMO OVAJ FLAG U NASTAVKU "--allow-unrelated-histories"
+    nprr git pull origin master --allow-unrelated-histories
 
 git log --> vidiš sve commitove 
 git diff --> prekaže ti što je izmijenjeno / usporedba nove verzije s trenutnom
@@ -37,8 +49,6 @@ q --> za izlazak, nešto kao "ctrl+c"
 
 
 
-AKO NE ŽELI MERGAT ILI PULLAT DODAŠ SAMO OVAJ FLAG U NASTAVKU "--allow-unrelated-histories"
-    nprr git pull origin master --allow-unrelated-histories
 
 
 
