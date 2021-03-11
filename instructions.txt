@@ -1,0 +1,90 @@
+SAVJETI ZA LARAVEL 
+    max upload je 100 mb 
+    kada uploadaš laravel obrati pozornost na gitignore file
+    sve uplodaš bez node_modulsa i vendora - zbog veličine
+    KAD IDEŠ UPLODATA NA SERVER - instaliraš laravel na serveru i onda samo se spojiš na svoj GitHub acc i downloadš projekt i to je to!
+
+///////////////////////KLJUČEVI
+kreirati ssh keys (oni povezuju tvoj github acc i repoe s PC-em)
+    koraci --> 1) kreirati ključeve (tajni i javni)
+               2) javni ključ kopirati u setingse na githubu (add ssh keys)
+               3) povezati ssh agentom kroz terminal -- KROZ GIT BASH!
+    upute --> https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+--> to set your account's default identity.
+
+/////////////////////// OSNOVE
+IME MAINA BRACHA MJENJAŠ U SETIGNS (na GitHubu) --> Repositories 
+
+git pull origin master --> origin master je ime branča
+
+git init ---> za inicirati git unutar aplikacije (foldera)
+git status
+git add . 
+git commit -m "lorem20" -m "description"
+    git commit am - "lorem20" --> to mozes koristi samo ako su u pitanju modificrani postojeći fajlovi, ne za nove fajlove --> to skraćuje korak add .
+git push origin master
+
+git clone (i onda hss ili http od repoa na githubu) --> za kopirati repo s githuba
+
+
+
+
+///////////////////////ZA SPAJANJE S VANJSKIM REPOM (slijedi točno po koracima)
+git init 
+git remote add origin "SSH"
+git pull origin master 
+    git add .
+    git commit -m "message"
+    git push origin master
+    
+AKO NE ŽELI MERGAT ILI PULLAT DODAŠ SAMO OVAJ FLAG U NASTAVKU "--allow-unrelated-histories"
+    nprr git pull origin master --allow-unrelated-histories
+ZA PROMIJENU ORIGINA REMOTEA, npr ako si spojen na jedan remote s lokalnim folderom i želiš na novi remote se spojiti
+git remote set-url origin "SSH"
+
+git log --> vidiš sve commitove 
+git diff --> prekaže ti što je izmijenjeno / usporedba nove verzije s trenutnom
+q --> za izlazak, nešto kao "ctrl+c"
+
+
+
+
+
+
+///////////////////////BRANČING --- kao sandbox za featurse, da ne sjebeš main code koji je provjeren i radi
+git branch --> vidiš sve brančove (onaj sa zvjezdicom je onaj u kome si sad)
+git checkout -b "ime novog brancha, bez navodnika" 
+    ZA STVORITI NOVI BRANČ (b) onda u njemu sve radiš normalno dalje osim pusha (tu navesti na koji branč pušaš)
+
+git push origin (IME BRANČA) 
+    git push origin feature_branch
+
+merge - kad mergaš side branč s master brančom, izbrisati side branč, ako hoćeš raditi neke dodatke na tom starom side branču moraš napraviti novi 
+    kad pušaš stvari na zaseban branč u githubu odmah te pita želiš li napravit "pull request", tj. spojiti master s tim side brančom
+    U GITHUBU = pull request -> merge pull request  (tako se spajaju brančevi)
+
+git branch -d "ime brancha, bez navodnika" --> za izbrisati branch
+    u pravilu se branchovi nakon mrganja trebaju izbrisati
+
+git merge --> savjet da često treba povući master branč na lokalni pc dok radiš svoj feature prije merga na github (pull reqeust) jer ako ne radiš često zaostasti ćeš puno iza!
+    //KONFLIKTI -- ako se na jednoj liniji coda nađu različiti unosi
+        da ga riješiš ili u githubu ili pregledaš fajlove i u editoru će ti pisati gdje je sukob, najlakše je pomaknuti u iduću liniju code i to je to
+
+
+
+///////////////////////UNDOING
+git reset --> poništava zadnji git add (mozes i specifcirati koji fajl, argumentom)
+git reset HEAD~1 --> za poništiti commit zadnji 
+    ako trebaš vratiti više komitova unazad, onda ideš naredbu git log --> tu nađeš onaj dugački kao ID i to kopiraš i rokneš naredbu git reset HARD "TAJ ID" --> onda će ti vratit na taj commit
+
+
+
+///////////////////////FORKING -- to za nečiji tuđi repo, gdje nemaš sve ovlasti i želiš dograđivati nečiji tuđi projekt
+u Githubu imaš gore fork, kad to klikneš kopiraš cijeli  TUĐI repo u tvoj acc automatski!
+
+    AKO KAD SKINEŠ FORK (PULLAŠ GA NA SVOJ PC) I HOĆEŠ NAPRAVIT FORK NA TOME, PRVO MORAŠ OTIĆI NA MASTER BRANČ FORKA I OVE DVIJE NAREDBE PROVUĆ, TEK ONDA MOŽEŠ FORKATI
+git remote add origin https://github.com/repo.git
+git push origin master
