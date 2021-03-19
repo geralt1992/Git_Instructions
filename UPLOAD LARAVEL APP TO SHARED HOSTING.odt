@@ -29,3 +29,7 @@ DB::raw("(SELECT count(is_read) FROM messages WHERE is_read = 0 ) as unread")) t
  DB::raw("(SELECT count(null)) as unread")) bude ipak oke s tim 
 
 17. u bazi u većinu tablica staviti auto inc trea ručno
+
+
+DODATAK KAD SI OBJAVLJIVAO NA PRAVI SERVER! FAST COMET
+1. moraš napraviti usera u phpmydatabaseu i tog usera staviti u env fajl
