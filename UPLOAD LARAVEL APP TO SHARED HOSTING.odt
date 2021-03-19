@@ -33,3 +33,4 @@ DB::raw("(SELECT count(is_read) FROM messages WHERE is_read = 0 ) as unread")) t
 
 DODATAK KAD SI OBJAVLJIVAO NA PRAVI SERVER! FAST COMET
 1. moraš napraviti usera u phpmydatabaseu i tog usera staviti u env fajl
+2. pitaj da ti prikazu hiden filse, to radi suport
